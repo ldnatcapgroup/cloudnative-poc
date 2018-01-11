@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cloudfoundryone-service
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
+server:
+  port: 8190
+eureka:
+  client:
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
